@@ -208,11 +208,6 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/common@^9.1.0":
-  version "9.1.12"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-9.1.12.tgz#731701fae63ae8e2ee2ce00e7d51f458ecd00c7c"
-  integrity sha512-XSIqkbM6VV1yixF9zuzeE5eqN1VsiXS517K2VU0XgCRSAzhVhLOeKsdYjeLf7PdSu/HgW/Tr81H+isi9A9I0YA==
-
 "@angular/compiler-cli@^11.0.0":
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-11.0.2.tgz#961df7f08dc98a6ea202e6aa22dc81ff29c9719d"
@@ -241,22 +236,12 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/compiler@^9.1.0":
-  version "9.1.12"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-9.1.12.tgz#3066a637bfe09642dd5c4a4dd029e7a771988311"
-  integrity sha512-suefk0OFkaJpUUKnV+phbL4T8fmVGHvzkereY5eqybQlumOez8NPL1PJcygAylh/E6OIAYm8SWookYwM6ZY9dg==
-
 "@angular/core@^11.0.0":
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-11.0.2.tgz#490248b1d746e24513f2db996bd857e5a36d2f45"
   integrity sha512-GyDebks5ZPHDyChDW3VvzJq00Ct0iuesNpb9z/GpKtOXqug3sGr4KgkFDUTbfizKPWyeoaLH9FQYP55215nCKQ==
   dependencies:
     tslib "^2.0.0"
-
-"@angular/core@^9.1.0":
-  version "9.1.12"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-9.1.12.tgz#e7e10f72f84f0787551424ad86279436e0b5edbe"
-  integrity sha512-WVA/eh3fzjx0apOzkKot4YRRUsGkHj50zFQWrAOMgivGaj1YVrvhf+m3hpglj5fn/BkLiFDl8RT0wAE8z9X+gQ==
 
 "@angular/forms@^11.0.0":
   version "11.0.2"
@@ -265,11 +250,6 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/forms@^9.1.0":
-  version "9.1.12"
-  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-9.1.12.tgz#8ae7ac480031e1e4097eeff9b45f5e6d2cce6b7c"
-  integrity sha512-LhjnZlC4WEsEsAJfOZLte+Lks3WBAFVeRv2lzoQNFVr/IMzBNDVfjEaaSqKF1cei3cjY39Df2nYDMJM7HfqbJA==
-
 "@angular/platform-browser-dynamic@^11.0.0":
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-11.0.2.tgz#e8f621482c4fe04c14d799c771382891052ee2a2"
@@ -277,22 +257,12 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/platform-browser-dynamic@^9.1.0":
-  version "9.1.12"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-9.1.12.tgz#332935d5ec4b44daaad1beae496dd994e2847a03"
-  integrity sha512-NmwUZaQeMnA6f+vP9Fp9P+qjL72H8dKlxLS76ujlKHVf75pP5oahWS8wfl7KXel1tKW3FQWMMffmKf5/NHRiSw==
-
 "@angular/platform-browser@^11.0.0":
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-11.0.2.tgz#78e640400050c69ca3322b8df0f4ec48f629ec34"
   integrity sha512-RHPm5/h8g3lSBgdg9OvO7w06juEwwBurvQcugXlk7+AeqznwzBodTWGPIATKzMySXQFmpy3bAZ3IxS0NkRrbWA==
   dependencies:
     tslib "^2.0.0"
-
-"@angular/platform-browser@^9.1.0":
-  version "9.1.12"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-9.1.12.tgz#f99fc360c40efd013677cc9ef4ead13425084a91"
-  integrity sha512-rPa/hJcLfdId6bYB0b6pFUo3QIgjZlvUlmtKMGdrLNLYR8XQxPa2Y/UdN/5YeZ12htGw6GXrX9U8U7nTbUSpkw==
 
 "@aurelia/debug@^0.7.0":
   version "0.7.0"
