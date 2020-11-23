@@ -1,4 +1,4 @@
-function config(entry = []) {
+export function config(entry = []) {
   return [
     ...entry,
     require.resolve('./dist/esm/preset/addDecorator'),
@@ -6,11 +6,6 @@ function config(entry = []) {
   ];
 }
 
-function managerEntries(entry = [], options) {
+export function managerEntries(entry = [], options) {
   return [...entry, require.resolve('./dist/esm/register')];
 }
-
-module.exports = {
-  managerEntries,
-  config,
-};

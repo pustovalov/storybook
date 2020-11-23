@@ -1,4 +1,4 @@
-function webpack(webpackConfig = {}, options = {}) {
+export function webpack(webpackConfig = {}, options = {}) {
   const { module = {} } = webpackConfig;
   const { loaderOptions, rule = {} } = options;
 
@@ -24,8 +24,6 @@ function webpack(webpackConfig = {}, options = {}) {
   };
 }
 
-function managerEntries(entry = []) {
+export function managerEntries(entry = []) {
   return [...entry, require.resolve('./dist/esm/register')];
 }
-
-module.exports = { webpack, managerEntries };

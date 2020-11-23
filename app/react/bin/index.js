@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-require('../dist/server');
+console.log('boot', Date.now())
+
+require("esm")(module)('../dist/server');
