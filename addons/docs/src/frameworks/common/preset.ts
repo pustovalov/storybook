@@ -1,7 +1,6 @@
 import path from 'path';
 import remarkSlug from 'remark-slug';
 import remarkExternalLinks from 'remark-external-links';
-import glob from 'glob';
 
 // @ts-ignore
 import createCompiler from '../../mdx/mdx-compiler-plugin';
