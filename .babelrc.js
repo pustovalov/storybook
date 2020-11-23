@@ -12,13 +12,23 @@ const withTests = {
   ],
 };
 
+const modules = process.env.BABEL_ESM === 'true' ? false : 'auto';
+
 module.exports = {
   ignore: [
     './lib/codemod/src/transforms/__testfixtures__',
     './lib/postinstall/src/__testfixtures__',
   ],
   presets: [
-    ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
+    [
+      '@babel/preset-env',
+      {
+        shippedProposals: true,
+        useBuiltIns: 'usage',
+        corejs: '3',
+        modules,
+      },
+    ],
     '@babel/preset-typescript',
     '@babel/preset-react',
     '@babel/preset-flow',
@@ -52,7 +62,15 @@ module.exports = {
     {
       test: './lib',
       presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
+        [
+          '@babel/preset-env',
+          {
+            shippedProposals: true,
+            useBuiltIns: 'usage',
+            corejs: '3',
+            modules,
+          },
+        ],
         '@babel/preset-react',
       ],
       plugins: [
@@ -103,6 +121,23 @@ module.exports = {
       env: {
         test: withTests,
       },
+    },
+    {
+      test: ['**/virtualModuleEntry.template.js'],
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            shippedProposals: true,
+            useBuiltIns: 'usage',
+            targets: {
+              node: '8.11',
+            },
+            corejs: '3',
+            modules: false,
+          },
+        ],
+      ],
     },
   ],
 };

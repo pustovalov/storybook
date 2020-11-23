@@ -15,7 +15,8 @@
     "directory": "lib/core"
   },
   "license": "MIT",
-  "main": "dist/client/index.js",
+  "main": "dist/cjs/client/index.js",
+  "module": "dist/esm/client/index.js",
   "types": "dist/client/index.d.ts",
   "files": [
     "dist/**/*",
@@ -102,6 +103,7 @@
     "inquirer": "^7.0.0",
     "interpret": "^2.0.0",
     "ip": "^1.1.5",
+    "read-pkg-up": "^7.0.1",
     "json5": "^2.1.1",
     "lazy-universal-dotenv": "^3.0.1",
     "micromatch": "^4.0.2",

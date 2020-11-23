@@ -23,7 +23,7 @@
     "README.md",
     "*.js",
     "*.d.ts",
-    "ts3.4/**/*"
+    "ts3.7/**/*"
   ],
   "scripts": {
     "build-storybook": "build-storybook",
@@ -95,7 +95,7 @@
   "typesVersions": {
     "<3.8": {
       "*": [
-        "ts3.4/*"
+        "ts3.7/*"
       ]
     }
   }

@@ -1,6 +1,7 @@
 import path from 'path';
 import remarkSlug from 'remark-slug';
 import remarkExternalLinks from 'remark-external-links';
+import glob from 'glob';
 
 // @ts-ignore
 import createCompiler from '../../mdx/mdx-compiler-plugin';
@@ -132,19 +133,4 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
   };
 
   return result;
-}
-
-export function managerEntries(entry: any[] = [], options: any) {
-  return [...entry, require.resolve('../../register')];
-}
-
-export function config(entry: any[] = [], options: any = {}) {
-  const { framework } = options;
-  const docsConfig = [require.resolve('./config')];
-  try {
-    docsConfig.push(require.resolve(`../${framework}/config`));
-  } catch (err) {
-    // there is no custom config for the user's framework, do nothing
-  }
-  return [...docsConfig, ...entry];
 }

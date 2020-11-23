@@ -35,8 +35,7 @@ import { ActionBar } from '../ActionBar/ActionBar';
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
 import { formatter } from './formatter';
-
-export { createElement as createSyntaxHighlighterElement };
+import type { SyntaxHighlighterProps } from './syntaxhighlighter-types';
 
 ReactSyntaxHighlighter.registerLanguage('jsextra', jsExtras);
 ReactSyntaxHighlighter.registerLanguage('jsx', jsx);
@@ -108,21 +107,6 @@ const Code = styled.code({
   opacity: 1,
 });
 
-export interface SyntaxHighlighterRendererProps {
-  rows: any[];
-  stylesheet: string;
-  useInlineStyles: boolean;
-}
-export interface SyntaxHighlighterProps {
-  language: string;
-  copyable?: boolean;
-  bordered?: boolean;
-  padded?: boolean;
-  format?: boolean;
-  className?: string;
-  renderer?: (props: SyntaxHighlighterRendererProps) => React.ReactNode;
-}
-
 export interface SyntaxHighlighterState {
   copied: boolean;
 }
@@ -130,6 +114,7 @@ export interface SyntaxHighlighterState {
 type ReactSyntaxHighlighterProps = ComponentProps<typeof ReactSyntaxHighlighter>;
 
 type Props = SyntaxHighlighterProps & ReactSyntaxHighlighterProps;
+
 export const SyntaxHighlighter: FunctionComponent<Props> = ({
   children,
   language = 'jsx',
@@ -184,3 +169,5 @@ export const SyntaxHighlighter: FunctionComponent<Props> = ({
     </Wrapper>
   );
 };
+
+export default SyntaxHighlighter;

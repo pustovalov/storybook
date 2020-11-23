@@ -173,7 +173,6 @@ export async function buildStaticStandalone(options: any) {
   const outputDir = path.isAbsolute(options.outputDir)
     ? options.outputDir
     : path.join(process.cwd(), options.outputDir);
-
   const defaultFavIcon = require.resolve('./public/favicon.ico');
 
   logger.info(`=> Cleaning outputDir ${outputDir}`);

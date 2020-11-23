@@ -9,6 +9,8 @@ import TerserWebpackPlugin from 'terser-webpack-plugin';
 import VirtualModulePlugin from 'webpack-virtual-modules';
 import PnpWebpackPlugin from 'pnp-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+// @ts-ignore
+import FilterWarningsPlugin from 'webpack-filter-warnings-plugin';
 
 import resolveFrom from 'resolve-from';
 
@@ -68,15 +70,18 @@ export default async ({
   presets,
   typescriptOptions,
 }: any) => {
-  const dlls = await presets.apply('webpackDlls', []);
   const logLevel = await presets.apply('logLevel', undefined);
   const frameworkOptions = await presets.apply(`${framework}Options`, {}, {});
   const { raw, stringified } = loadEnv({ production: true });
   const babelLoader = createBabelLoader(babelOptions, framework);
   const isProd = configType === 'PRODUCTION';
-  const entryTemplate = await fse.readFile(path.join(__dirname, 'virtualModuleEntry.template.js'), {
-    encoding: 'utf8',
-  });
+  const entryTemplate = await fse.readFile(
+    // TODO ANDREW maybe something simpler
+    path.join(__dirname, '../../../esm/server/preview', 'virtualModuleEntry.template.js'),
+    {
+      encoding: 'utf8',
+    }
+  );
   const storyTemplate = await fse.readFile(path.join(__dirname, 'virtualModuleStory.template.js'), {
     encoding: 'utf8',
   });
@@ -125,6 +130,12 @@ export default async ({
       publicPath: '',
     },
     plugins: [
+      new FilterWarningsPlugin({
+        exclude: /export '(decorators|parameters|argTypesEnhancers|globals|globalTypes|args|argTypes)' was not found in/,
+      }),
+      new FilterWarningsPlugin({
+        exclude: /export '\S+' was not found in 'global'/,
+      }),
       Object.keys(virtualModuleMapping).length > 0
         ? new VirtualModulePlugin(virtualModuleMapping)
         : null,
@@ -144,7 +155,6 @@ export default async ({
             FRAMEWORK_OPTIONS: frameworkOptions,
           },
           headHtmlSnippet: getPreviewHeadHtml(configDir, process.env),
-          dlls,
           bodyHtmlSnippet: getPreviewBodyHtml(configDir, process.env),
         }),
         minify: {
@@ -185,6 +195,7 @@ export default async ({
     resolve: {
       extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json', '.cjs'],
       modules: ['node_modules'].concat((raw.NODE_PATH as string[]) || []),
+      mainFields: isProd ? undefined : ['browser', 'main'],
       alias: {
         ...themingPaths,
         ...storybookPaths,
@@ -204,6 +215,9 @@ export default async ({
         chunks: 'all',
       },
       runtimeChunk: true,
+      sideEffects: true,
+      usedExports: true,
+      concatenateModules: true,
       minimizer: isProd
         ? [
             new TerserWebpackPlugin({

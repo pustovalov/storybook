@@ -15,14 +15,16 @@
     "directory": "lib/core-events"
   },
   "license": "MIT",
-  "main": "dist/index.js",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
     "*.js",
     "*.d.ts",
-    "ts3.4/**/*"
+    "ts3.7/**/*"
   ],
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
@@ -37,7 +39,7 @@
   "typesVersions": {
     "<3.8": {
       "*": [
-        "ts3.4/*"
+        "ts3.7/*"
       ]
     }
   }
