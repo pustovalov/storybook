@@ -7,7 +7,7 @@ const getFrameworkPresets = (framework) => {
   }
 };
 
-export default (storybookOptions, presetOptions) => {
+module.exports = (storybookOptions, presetOptions) => {
   return [
     { name: require.resolve('./common-preset'), options: presetOptions },
     { name: require.resolve('./dist/cjs/frameworks/common/preset'), options: presetOptions },
