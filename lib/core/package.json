@@ -18,6 +18,13 @@
   "main": "dist/cjs/client/index.js",
   "module": "dist/esm/client/index.js",
   "types": "dist/client/index.d.ts",
+  "typesVersions": {
+    "<3.8": {
+      "*": [
+        "ts3.4/*"
+      ]
+    }
+  },
   "files": [
     "dist/**/*",
     "dll/**/*",
@@ -158,12 +165,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "47d0eac6db5423648c3039e0d5c8c3bcc1d8aceb",
-  "typesVersions": {
-    "<3.8": {
-      "*": [
-        "ts3.4/*"
-      ]
-    }
-  }
+  "gitHead": "47d0eac6db5423648c3039e0d5c8c3bcc1d8aceb"
 }

@@ -17,6 +17,16 @@
   "license": "MIT",
   "main": "dist/client/index.js",
   "types": "dist/client/index.d.ts",
+  "typesVersions": {
+    "<3.8": {
+      "types-6-0": [
+        "ts3.4/dist/client/preview/types-6-0.d.ts"
+      ],
+      "*": [
+        "ts3.4/*"
+      ]
+    }
+  },
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -73,15 +83,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "47d0eac6db5423648c3039e0d5c8c3bcc1d8aceb",
-  "typesVersions": {
-    "<3.8": {
-      "types-6-0": [
-        "ts3.4/dist/client/preview/types-6-0.d.ts"
-      ],
-      "*": [
-        "ts3.4/*"
-      ]
-    }
-  }
+  "gitHead": "47d0eac6db5423648c3039e0d5c8c3bcc1d8aceb"
 }
