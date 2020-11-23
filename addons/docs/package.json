@@ -20,6 +20,13 @@
   "main": "dist/cjs/public_api.js",
   "module": "dist/esm/public_api.js",
   "types": "dist/public_api.d.ts",
+  "typesVersions": {
+    "<3.8": {
+      "*": [
+        "ts3.4/*"
+      ]
+    }
+  },
   "files": [
     "dist/**/*",
     "angular/**/*",
@@ -149,12 +156,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "47d0eac6db5423648c3039e0d5c8c3bcc1d8aceb",
-  "typesVersions": {
-    "<3.8": {
-      "*": [
-        "ts3.4/*"
-      ]
-    }
-  }
+  "gitHead": "47d0eac6db5423648c3039e0d5c8c3bcc1d8aceb"
 }
