@@ -29,7 +29,6 @@ import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typesc
 
 // @ts-ignore
 import ReactSyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-light';
-// @ts-ignore
 import { ActionBar } from '../ActionBar/ActionBar';
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
