@@ -46,7 +46,6 @@ project {
     buildType(E2E)
     buildType(SmokeTests)
     buildType(Frontpage)
-    buildType(Docs)
     buildType(Lint)
     buildType(Test)
     buildType(Coverage)
@@ -59,7 +58,6 @@ project {
             RelativeId("E2E"),
             RelativeId("SmokeTests"),
             RelativeId("Frontpage"),
-            RelativeId("Docs"),
             RelativeId("Lint"),
             RelativeId("Test"),
             RelativeId("Coverage")
@@ -433,39 +431,6 @@ object Frontpage : BuildType({
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
             triggerRules = "-:.teamcity/**"
             branchFilter = "+:master"
-        }
-    }
-})
-
-object Docs : BuildType({
-    name = "Docs"
-    type = Type.DEPLOYMENT
-
-    steps {
-        script {
-            workingDir = "docs"
-            scriptContent = """
-                #!/bin/bash
-                set -e -x
-                
-                yarn install
-                yarn build
-            """.trimIndent()
-            dockerImage = "node:10"
-            dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
-        }
-    }
-
-    triggers {
-        vcs {
-            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-            triggerRules = "-:.teamcity/**"
-            branchFilter = """
-                +:<default>
-                +:next
-                +:master
-                +:pull/*
-            """.trimIndent()
         }
     }
 })
