@@ -46,7 +46,6 @@ project {
     buildType(E2E)
     buildType(SmokeTests)
     buildType(Frontpage)
-    buildType(Lint)
     buildType(Test)
     buildType(Coverage)
 
@@ -58,7 +57,6 @@ project {
             RelativeId("E2E"),
             RelativeId("SmokeTests"),
             RelativeId("Frontpage"),
-            RelativeId("Lint"),
             RelativeId("Test"),
             RelativeId("Coverage")
     )
@@ -435,54 +433,6 @@ object Frontpage : BuildType({
     }
 })
 
-object Lint : BuildType({
-    name = "Lint"
-
-    dependencies {
-        dependency(Build) {
-            snapshot {
-                onDependencyFailure = FailureAction.CANCEL
-            }
-            artifacts {
-                artifactRules = "dist.tar.gz!** => ."
-            }
-        }
-    }
-
-    steps {
-        script {
-            scriptContent = """
-                #!/bin/bash
-                set -e -x
-                
-                yarn install
-                
-                # TODO remove after merging
-                mkdir temp-eslint-teamcity
-                cd temp-eslint-teamcity
-                yarn init -y
-                yarn add -D eslint-teamcity
-                cd ..
-                
-                yarn lint:js --format ./temp-eslint-teamcity/node_modules/eslint-teamcity/index.js .
-                yarn lint:md .
-            """.trimIndent()
-            dockerImage = "node:10"
-            dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
-        }
-    }
-
-    failureConditions {
-        failOnMetricChange {
-            metric = BuildFailureOnMetric.MetricType.INSPECTION_ERROR_COUNT
-            threshold = 0
-            units = BuildFailureOnMetric.MetricUnit.DEFAULT_UNIT
-            comparison = BuildFailureOnMetric.MetricComparison.MORE
-            compareTo = value()
-        }
-    }
-})
-
 object Test : BuildType({
     name = "Test"
 
@@ -559,7 +509,6 @@ object TestWorkflow : BuildType({
     dependencies {
         snapshot(E2E) {}
         snapshot(SmokeTests) {}
-        snapshot(Lint) {}
         snapshot(Coverage) {}
     }
 
