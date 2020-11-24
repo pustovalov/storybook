@@ -21,6 +21,7 @@
     "@storybook/addon-cssresources": "6.1.5",
     "@storybook/addon-design-assets": "6.1.5",
     "@storybook/addon-docs": "6.1.5",
+    "@storybook/addon-essentials": "6.1.5",
     "@storybook/addon-events": "6.1.5",
     "@storybook/addon-graphql": "6.1.5",
     "@storybook/addon-jest": "6.1.5",
