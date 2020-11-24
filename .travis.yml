@@ -1,14 +1,23 @@
+dist: trusty
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 language: node_js
 node_js:
   - "10"
-
-# install:
-  # - yarn install
-  # - yarn bootstrap --core
-
-script:
-
+env:
+    - STO=default
 jobs:
-  include:
-    - script: echo "placeholder task"
-      name: "Placeholder task"
+  fast_finish: true
+  allow_failures:
+    - env: STO=release
+
+before_install:
+
+install:
+    - yarn bootstrap --core
+script:
+    - yarn test --cli
