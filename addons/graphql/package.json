@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-graphql",
-  "version": "6.1.3",
+  "version": "6.1.5",
   "description": "Storybook addon to display the GraphiQL IDE",
   "keywords": [
     "addon",
@@ -39,8 +39,8 @@
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-classes": "^7.12.1",
-    "@storybook/addons": "6.1.3",
-    "@storybook/api": "6.1.3",
+    "@storybook/addons": "6.1.5",
+    "@storybook/api": "6.1.5",
     "@types/webpack": "^4.41.24",
     "babel-loader": "^8.0.6",
     "core-js": "^3.0.1",
@@ -66,5 +66,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "fc7dd4f63be1df7cff830a813dda8ff97e10d30b"
+  "gitHead": "2622d8aa6d8ba207a4b03d2ee1d7d9f083fba48d"
 }
