@@ -39,11 +39,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/core": "^7.12.1",
-    "@babel/generator": "^7.12.1",
-    "@babel/parser": "^7.12.3",
-    "@babel/plugin-transform-react-jsx": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/core": "^7.12.9",
+    "@babel/generator": "^7.12.5",
+    "@babel/parser": "^7.12.7",
+    "@babel/plugin-transform-react-jsx": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
     "@jest/transform": "^26.0.0",
     "@mdx-js/loader": "^1.6.19",
     "@mdx-js/mdx": "^1.6.19",
@@ -82,7 +82,7 @@
   },
   "devDependencies": {
     "@angular/core": "^11.0.0",
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.9",
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.23",
     "@storybook/react": "6.1.6",
@@ -115,7 +115,7 @@
     "zone.js": "^0.11.3"
   },
   "peerDependencies": {
-    "@babel/core": "^7.11.5",
+    "@babel/core": "^7.12.9",
     "@storybook/vue": "6.1.6",
     "babel-loader": "^8.0.0",
     "react": "^16.8.0 || ^17.0.0",
