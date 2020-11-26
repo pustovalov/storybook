@@ -63,7 +63,7 @@
     "@types/webpack": "^4.41.24"
   },
   "peerDependencies": {
-    "@babel/core": "^7.11.5",
+    "@babel/core": "^7.12.9",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
