@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@babel/preset-flow": "^7.12.1",
-    "@babel/preset-react": "^7.12.1",
+    "@babel/preset-react": "^7.12.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.2",
     "@storybook/addons": "6.1.6",
     "@storybook/core": "6.1.6",
